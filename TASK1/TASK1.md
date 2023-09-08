@@ -49,13 +49,21 @@ bitbake-layers add-layer meta-mylayer
 bitbake-layers show-layers 
 
 ├── conf
+
 │   └── layer.conf
+
 ├── COPYING.MIT
+
 ├── README
+
 ├── recipes-example
+
 │   └── example
+
 │       ├── example_0.1.bb
+
 │       └── files
+
 │           └── hello.c
 
 
