@@ -32,7 +32,7 @@ How to find our bitbake file ?
 
 + Các file bitbake out sẽ được tạo ra ở trong thư mục tmp/work/board-name/
 
-
++ Built it : bitbake -c populate_sdk core-image-minimal
 1.2 Create a simple layer 
 
 SDK là một tập hợp các công cụ và tài liệu để có thể phát triển ứng dụng, thư viện, và các thành phần phần mềm khác cho một nền tảng hoặc hệ thống cụ thể.
