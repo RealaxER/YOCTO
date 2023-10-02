@@ -34,10 +34,27 @@ Version Kernel là 5.15
 PREFERRED_VERSION_linux-yocto ?= "5.15%"
 ``````
 # 2) Kiểm tra systemd 
-BBB yocto hỗ trợ systemd tuy nhiên ban đầu nó sẽ chưa được config vào
+BBB yocto hỗ trợ sysvinit tuy nhiên ban đầu nó sẽ chưa được config vào
 
-Để hỗ trợ systemd-boot chúng ta cần thêm đoạn mã sau
+Để hỗ trợ sysvinit chúng ta cần thêm đoạn mã sau trong local.conf
 ``````
-EFI_PROVIDER="systemd-boot"
+INIT_MANAGER = "sysvinit"
 ``````
 
+Nếu muốn chuyển thành systemd thì chỉ cần như sau , tuy nhiên quá trình này sẽ mất thời gian do systemd ban đầu chưa được support
+
+``````
+INIT_MANAGER = "systemd"
+``````
+Ngoài systemd và sysvinit thì còn một cái nữa là BusyBox với BusyBox mdev 
+
+Nó phù hợp dành cho các cấc file nhỏ 
+``````
+INIT_MANAGER = "mdev-busybox"
+``````
+
+Bạn có thể xem source code của manager init để biết cách nó cấu hình 
+
+``````
+cat meta/conf/distro/include/init-manager-systemd.inc
+``````
