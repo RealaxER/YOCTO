@@ -58,3 +58,7 @@ Bạn có thể xem source code của manager init để biết cách nó cấu 
 ``````
 cat meta/conf/distro/include/init-manager-systemd.inc
 ``````
+Để enable feature tính thời gian trong yocto ta cần bật nó trong thằng kernel với câu lệnh sau 
+``````
+APPEND += "printk.time=y"
+``````
